@@ -21,11 +21,7 @@ function HomeStack() {
             name='Home'
             component={HomeScreen}
         />
-        <HomeScreenStack.Screen
-            name='Detail'
-            component={DetailScreen}
-        />
-
+      
     </HomeScreenStack.Navigator>
     )
    
@@ -91,6 +87,12 @@ const Navigation = () => {
                 <StackScreen.Screen
                     name='Home'
                     component={TabStack}
+                />
+                <StackScreen.Screen
+                
+                    name='Detail'
+                    component={DetailScreen}
+                    options={{headerShown:false}}
                 />
 
             </StackScreen.Navigator>

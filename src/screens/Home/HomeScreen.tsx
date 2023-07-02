@@ -3,15 +3,19 @@ import React from 'react'
 import Header from '../../components/Header'
 import RecipeCard from './components/RecipeCard'
 import InfoCard from './components/InfoCard'
+import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import { HomeStackParam } from '../../types'
+
+
 
 const HomeScreen = () => {
   return (
-    <View>
+    <View style={{flex:1}} >
         <Header/>
 
         <InfoCard/>
 
-      <RecipeCard/>
+      <RecipeCard  />
     </View>
   )
 }
