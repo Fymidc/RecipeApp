@@ -1,13 +1,15 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { HomeStackParam, StackParam, TabStackParam } from '../types'
+import { HomeStackParam, SearchStackParam, StackParam, TabStackParam } from '../types'
 import HomeScreen from '../screens/Home/HomeScreen'
 import DetailScreen from '../screens/Detail/DetailScreen'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import SearchScreen from '../screens/Search/SearchScreen'
 
 const HomeScreenStack = createNativeStackNavigator<HomeStackParam>()
+const SearchScreenStack = createNativeStackNavigator<SearchStackParam>()
 
 const Tab = createBottomTabNavigator<TabStackParam>()
 const StackScreen = createNativeStackNavigator<StackParam>()
@@ -28,7 +30,17 @@ function HomeStack() {
 
 }
 function SearchStack() {
-
+    return(
+        <SearchScreenStack.Navigator 
+        screenOptions={{headerShown: false}}
+        >
+       <SearchScreenStack.Screen
+           name='Search'
+           component={SearchScreen}
+       />
+     
+   </SearchScreenStack.Navigator>
+   )
 }
 function CreateStack() {
 
@@ -87,6 +99,12 @@ const Navigation = () => {
                 <StackScreen.Screen
                     name='Home'
                     component={TabStack}
+                    options={{headerShown:false}}
+                />
+                <StackScreen.Screen
+                    name='Search'
+                    component={TabStack}
+                    options={{headerShown:false}}
                 />
                 <StackScreen.Screen
                 

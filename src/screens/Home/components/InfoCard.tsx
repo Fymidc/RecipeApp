@@ -1,27 +1,29 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 
 const InfoCard = () => {
     return (
+        <View style={{flex:1,marginHorizontal:30}} >
+
         <View style={style.backGround} >
-          <Text>appName</Text>
-          <Text style={{flexWrap:"wrap",paddingHorizontal:15}} > Lorem ipsum dolor,
+          <Text style={{marginHorizontal:10}} >D & R</Text>
+          <MaterialCommunityIcons name='star-shooting-outline' size={20} color={"orange"} />
+          <Text style={{flexWrap:"wrap",paddingHorizontal:20}} > Lorem ipsum dolor,
              sit amet consectetur adipisicing elit. 
              Perspiciatis, ex quisquam. Repudiandae molestias possimus at,
-              consequuntur natus laboriosam 
-              repellat veritatis accusantium quo ipsum libero, 
-              delectus aperiam fugit necessitatibus minima perspiciatis? </Text>
+               </Text>
+        </View>
         </View>
       )
     }
     
     const style = StyleSheet.create({
         backGround:{
-            backgroundColor:"yellow",
-            padding:25,
-            margin:20,
-            height:80,
+           
+           
             borderRadius:20,
+            
             
             flexDirection:"row",
             

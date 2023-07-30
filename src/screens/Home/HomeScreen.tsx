@@ -1,21 +1,28 @@
-import { View, Text } from 'react-native'
+import { View,ScrollView , Text } from 'react-native'
 import React from 'react'
 import Header from '../../components/Header'
 import RecipeCard from './components/RecipeCard'
 import InfoCard from './components/InfoCard'
-import { NativeStackScreenProps } from '@react-navigation/native-stack'
-import { HomeStackParam } from '../../types'
+
 
 
 
 const HomeScreen = () => {
   return (
-    <View style={{flex:1}} >
+    <View style={{flex:1 ,backgroundColor:"white"}} >
         <Header/>
 
         <InfoCard/>
+    
+    <View style={{flex:8}} >
+    <ScrollView  >
 
       <RecipeCard  />
+      <RecipeCard  />
+      <RecipeCard  />
+      <RecipeCard  />
+    </ScrollView>
+    </View>
     </View>
   )
 }

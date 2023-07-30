@@ -14,7 +14,7 @@ HomeStackParam,
 >
 
 
-const RecipeCard = () => {
+const SearchCard = () => {
 
     const navigation = useNavigation<HomeScreenNavigationProp>()
    
@@ -26,8 +26,8 @@ const RecipeCard = () => {
             <ImageBackground source={image} style={style.image} resizeMode='cover' >
                 <View style={{ flex: 1, justifyContent: "space-between", padding: 20 }} >
 
-                    <View style={{ flex: 6, flexDirection: "row", justifyContent: "space-between" }} >
-                        <View style={{backgroundColor:"white",height:"35%",borderRadius:10}} >
+                    <View style={{ flex: 3, flexDirection: "row", justifyContent: "space-between" }} >
+                        <View style={{backgroundColor:"white",height:"30%",borderRadius:10}} >
 
                         <Text style={{color:"black",padding:5,textAlign:"center"}} >Orange based</Text>
                         </View>
@@ -59,7 +59,7 @@ const style = StyleSheet.create({
         backgroundColor: "yellow",
         elevation:5,
         margin: 20,
-
+       
         borderRadius: 20,
         
         overflow: "hidden"
@@ -74,4 +74,4 @@ const style = StyleSheet.create({
         color: "white"
     }
 })
-export default RecipeCard
+export default SearchCard
