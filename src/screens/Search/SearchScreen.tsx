@@ -5,21 +5,28 @@ import SearchCard from './components/SearchCard'
 import SearchBg from "../../images/SearchBg.svg"
 
 const SearchScreen = () => {
+
+    const empty =true
+
     return (
         <View style={{ flex: 1, backgroundColor: "white" }} >
             <InputBar />
 
-            <View style={{ flex: 1,alignItems:"center" }} >
-               
-                <SearchBg width="200%" height="200%" />
+            <View style={{ flex: 1, alignItems: "center" }} >
 
-
+                {empty ?  <SearchBg width="200%" height="200%" /> : 
+                
                 <ScrollView>
 
                     <SearchCard />
                     <SearchCard />
                     <SearchCard />
                 </ScrollView>
+                }
+           
+
+                
+                
             </View>
         </View>
     )

@@ -6,6 +6,9 @@ export type SearchStackParam={
     Search:undefined,
     Detail:undefined
 }
+export type CreateStackParam={
+    Create:undefined,
+}
 export type StackParam={
     Home:undefined,
     Detail:undefined,

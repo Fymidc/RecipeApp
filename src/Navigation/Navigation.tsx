@@ -1,15 +1,18 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { HomeStackParam, SearchStackParam, StackParam, TabStackParam } from '../types'
+import { CreateStackParam, HomeStackParam, SearchStackParam, StackParam, TabStackParam } from '../types'
 import HomeScreen from '../screens/Home/HomeScreen'
 import DetailScreen from '../screens/Detail/DetailScreen'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import SearchScreen from '../screens/Search/SearchScreen'
+import CreateScreen from '../screens/Create/CreateScreen'
+import { MyTabBar } from './MyTabBar'
 
 const HomeScreenStack = createNativeStackNavigator<HomeStackParam>()
 const SearchScreenStack = createNativeStackNavigator<SearchStackParam>()
+const CreateScreenStack = createNativeStackNavigator<CreateStackParam>()
 
 const Tab = createBottomTabNavigator<TabStackParam>()
 const StackScreen = createNativeStackNavigator<StackParam>()
@@ -43,7 +46,23 @@ function SearchStack() {
    )
 }
 function CreateStack() {
+    return(
+        <CreateScreenStack.Navigator 
+        screenOptions={{headerShown: false }}
+    
+        >
+       <CreateScreenStack.Screen
+           name='Create'
+           component={CreateScreen}
+           //create screende basıldığında modal aç bunu için globalde state tut reduxdan sonra
+           
+          
 
+           
+       />
+     
+   </CreateScreenStack.Navigator>
+   )
 }
 function FavoriteStack() {
 
@@ -58,6 +77,7 @@ function TabStack() {
         <Tab.Navigator
         screenOptions={{ headerShown: false }}
         initialRouteName="HomeTab"
+        tabBar={props => <MyTabBar {...props} />}
     >
         <Tab.Screen
             name='HomeTab'
@@ -79,6 +99,7 @@ function TabStack() {
         <Tab.Screen
             name='UserTab'
             component={UserStack}
+            
         />
     </Tab.Navigator> 
     )
