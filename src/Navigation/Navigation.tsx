@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { CreateStackParam, HomeStackParam, SearchStackParam, StackParam, TabStackParam } from '../types'
+import { CreateStackParam, FavoriteStackParam, HomeStackParam, SearchStackParam, StackParam, TabStackParam, UserStackParam } from '../types'
 import HomeScreen from '../screens/Home/HomeScreen'
 import DetailScreen from '../screens/Detail/DetailScreen'
 import { NavigationContainer } from '@react-navigation/native'
@@ -9,10 +9,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import SearchScreen from '../screens/Search/SearchScreen'
 import CreateScreen from '../screens/Create/CreateScreen'
 import { MyTabBar } from './MyTabBar'
+import FavoriteScreen from '../screens/Favorite/FavoriteScreen'
+import ProfileScreen from '../screens/Profile/ProfileScreen'
 
 const HomeScreenStack = createNativeStackNavigator<HomeStackParam>()
 const SearchScreenStack = createNativeStackNavigator<SearchStackParam>()
 const CreateScreenStack = createNativeStackNavigator<CreateStackParam>()
+const FavoriteScreenStack = createNativeStackNavigator<FavoriteStackParam>()
+const UserScreenStack = createNativeStackNavigator<UserStackParam>()
 
 const Tab = createBottomTabNavigator<TabStackParam>()
 const StackScreen = createNativeStackNavigator<StackParam>()
@@ -65,9 +69,31 @@ function CreateStack() {
    )
 }
 function FavoriteStack() {
+    return(
 
+    <FavoriteScreenStack.Navigator>
+        <FavoriteScreenStack.Screen  
+        name='Favorite'
+    component={FavoriteScreen}     
+    options={{headerTitleAlign:"center",headerTitleStyle:{fontSize:25,color:"black"}}}   
+        
+        />
+
+    </FavoriteScreenStack.Navigator>
+    )
 }
+
+
 function UserStack() {
+    return(
+        <UserScreenStack.Navigator>
+            <UserScreenStack.Screen name="Profile"  component={ProfileScreen}
+                options={{headerTitleAlign:"center",headerTitleStyle:{fontSize:25,color:"black"}}}   
+
+            />
+        </UserScreenStack.Navigator>
+        
+    )
 
 }
 

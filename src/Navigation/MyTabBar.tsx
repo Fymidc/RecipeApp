@@ -1,7 +1,7 @@
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import React, { useState } from 'react'
 
-import { View, Text, TouchableOpacity, Modal, StyleSheet, Button } from 'react-native';
+import { View, Alert, TouchableOpacity, Modal, StyleSheet, Button } from 'react-native';
 import IonIcons from "react-native-vector-icons/Ionicons"
 import FontAwesome from "react-native-vector-icons/FontAwesome"
 import AntDesign from "react-native-vector-icons/AntDesign"
@@ -19,7 +19,14 @@ export function MyTabBar({ state, descriptors, navigation }: BottomTabBarProps) 
                 transparent={false}
                 visible={showModal}
                 onRequestClose={() => {
-                    console.log('Modal has been closed.');
+                    Alert.alert("Are you sure?","You will lose the entered data.",[
+                        {
+                          text:"Cancel",
+                          onPress: ()=> console.log("cancel pressed"),
+                          style: "cancel"
+                        },
+                        {text: 'OK', onPress: () => console.log('OK Pressed'),style:"default"},
+                      ])
                 }}>
                 {/*All views of Modal*/}
                 {/*Animation can be slide, slide, none*/}

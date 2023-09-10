@@ -1,10 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function ModalInputs() {
+const ProfileScreen = () => {
   return (
     <View>
-      <Text>ModalInputs</Text>
+      <Text>ProfileScreen</Text>
     </View>
   )
 }
+
+export default ProfileScreen

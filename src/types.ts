@@ -9,6 +9,12 @@ export type SearchStackParam={
 export type CreateStackParam={
     Create:undefined,
 }
+export type UserStackParam={
+    Profile:undefined,
+}
+export type FavoriteStackParam={
+    Favorite:undefined,
+}
 export type StackParam={
     Home:undefined,
     Detail:undefined,
