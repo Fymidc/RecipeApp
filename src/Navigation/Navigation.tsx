@@ -73,7 +73,7 @@ function FavoriteStack() {
 
     <FavoriteScreenStack.Navigator>
         <FavoriteScreenStack.Screen  
-        name='Favorite'
+        name='Favorites'
     component={FavoriteScreen}     
     options={{headerTitleAlign:"center",headerTitleStyle:{fontSize:25,color:"black"}}}   
         
@@ -88,7 +88,7 @@ function UserStack() {
     return(
         <UserScreenStack.Navigator>
             <UserScreenStack.Screen name="Profile"  component={ProfileScreen}
-                options={{headerTitleAlign:"center",headerTitleStyle:{fontSize:25,color:"black"}}}   
+                options={{headerShown:false}}   
 
             />
         </UserScreenStack.Navigator>
